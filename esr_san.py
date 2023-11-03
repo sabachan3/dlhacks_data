@@ -440,8 +440,8 @@ def main():
                                     transforms.RandomHorizontalFlip(p=0.5),
                                     transforms.RandomVerticalFlip(p=0.5),
                                     transforms.ToTensor()])
-    hr_img = torchvision.datasets.ImageFolder(root="/content/gdrive/MyDrive/dlhacks/train_data", transform=hr_transform)
-    eval_img = torchvision.datasets.ImageFolder(root="/content/gdrive/MyDrive/dlhacks/valid_data",transform=hr_transform)
+    hr_img = torchvision.datasets.ImageFolder(root="./data", transform=hr_transform)
+    eval_img = torchvision.datasets.ImageFolder(root="./eval_data",transform=hr_transform)
     hrimg_loader = DataLoader(hr_img, batch_size=batch_size, shuffle=True, drop_last=True)
     eval_loader = DataLoader(eval_img, batch_size=batch_size, shuffle=True, drop_last=True)
     torch.autograd.set_detect_anomaly(True)
