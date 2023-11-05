@@ -159,7 +159,7 @@ def main():
     num_epochs = 1000
     DiscriminatorLR=1.5e-4
     GeneratorLR=1.5e-4
-    batch_size = 32
+    batch_size = 16
     hr_transform = transforms.Compose([transforms.RandomCrop(size=(256, 256)), 
                                         transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
                                         transforms.RandomGrayscale(p=0.1),
