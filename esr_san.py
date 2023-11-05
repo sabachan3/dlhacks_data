@@ -428,10 +428,10 @@ if __name__ == "__main__":
         return real, fake
 
     def main():
-        num_epochs=100
+        num_epochs = 1000
         DiscriminatorLR=1.5e-4
         GeneratorLR=1.5e-4
-        batch_size = 48
+        batch_size = 256
         hr_transform = transforms.Compose([transforms.RandomCrop(size=(256, 256)), 
                                         transforms.ColorJitter(brightness=0.5, contrast=0.5, saturation=0.5),
                                         transforms.RandomGrayscale(p=0.1),
@@ -525,15 +525,15 @@ if __name__ == "__main__":
             fout.close()
             torch.save(G.state_dict(), "./ckpt/esrgan_gene_ckpt.pth")
             torch.save(D.state_dict(), "./ckpt/esrgan_disc_ckpt.pth")
-            if i == str(1200):
-                torch.save(G.state_dict(), "./ckpt/esrgan_gene_1200.pth")
-                torch.save(D.state_dict(), "./ckpt/esrgan_disc1200.pth")
-            if i == str(1500):
-                torch.save(G.state_dict(), "./ckpt/esrgan_gene_1500.pth")
-                torch.save(D.state_dict(), "./ckpt/esrgan_disc_1500.pth")
-            if i == str(2000):
-                torch.save(G.state_dict(), "./ckpt/esrgan_gene_2000.pth")
-                torch.save(D.state_dict(), "./ckpt/esrgan_disc_2000.pth")
+            if i == str(250):
+                torch.save(G.state_dict(), "./ckpt/esrgan_gene_250.pth")
+                torch.save(D.state_dict(), "./ckpt/esrgan_disc_250.pth")
+            if i == str(500):
+                torch.save(G.state_dict(), "./ckpt/esrgan_gene_500.pth")
+                torch.save(D.state_dict(), "./ckpt/esrgan_disc_500.pth")
+            if i == str(750):
+                torch.save(G.state_dict(), "./ckpt/esrgan_gene_750.pth")
+                torch.save(D.state_dict(), "./ckpt/esrgan_disc_750.pth")
                 
             j = 0
         torch.save(G.state_dict(), "./ckpt/esrsan_gene_finish.pth")
